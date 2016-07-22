@@ -93,8 +93,8 @@ Template.accountProfile.onRendered ->
 	Tracker.afterFlush ->
 		# this should throw an error-template
 		FlowRouter.go("home") if !RocketChat.settings.get("Accounts_AllowUserProfileChange")
-		SideNav.setFlex "accountFlex"
-		SideNav.openFlex()
+		#SideNav.setFlex "accountFlex"
+		#SideNav.openFlex()
 
 Template.accountProfile.events
 	'click .submit button': (e, instance) ->

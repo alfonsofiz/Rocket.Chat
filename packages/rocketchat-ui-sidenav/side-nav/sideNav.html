@@ -24,7 +24,7 @@
 					{{/if}}
 				</div>
 			</div>
-			<div class="unread-rooms bottom-unread-rooms hidden">
+			<div class="unread-rooms bottom-unread-rooms hidden" style="display:none;">
 				{{_ "More_unreads"}} <i class="icon-down-big"></i>
 			</div>
 			<div class="flex-nav animated-hidden">
@@ -32,9 +32,9 @@
 					{{> Template.dynamic template=flexTemplate data=flexData}}
 				</section>
 			</div>
-			<span class="arrow bottom"></span>
+			<span class="arrow bottom" style="display:none;"></span>
 		{{/if}}
-		<footer class="footer">
+		<footer class="footer" style="display:none;">
 			{{{footer}}}
 		</footer>
 	</aside>
