@@ -30,3 +30,7 @@ Template.combined.events
 	'click .more-channels': ->
 		SideNav.setFlex "listCombinedFlex"
 		SideNav.openFlex()
+
+	'click .clase-add-child': ->
+		SideNav.setFlex "joinSchoolClassRoom"
+		SideNav.openFlex()

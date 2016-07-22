@@ -18,3 +18,4 @@ Meteor.publish 'subscription', ->
 			desktopNotifications: 1
 			mobilePushNotifications: 1
 			emailNotifications: 1
+			clase: 1

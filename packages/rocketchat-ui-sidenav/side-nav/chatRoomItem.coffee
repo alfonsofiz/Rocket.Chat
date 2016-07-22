@@ -12,6 +12,8 @@ Template.chatRoomItem.helpers
 		return 'status-' + (Session.get('user_' + this.name + '_status') or 'offline')
 
 	name: ->
+		if this.clase?.childName?
+			return this.clase.childName
 		return this.name
 
 	roomIcon: ->

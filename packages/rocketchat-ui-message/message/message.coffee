@@ -10,6 +10,8 @@ Template.message.helpers
 		return 'false' if this.groupable is false
 	isSequential: ->
 		return 'sequential' if this.groupable isnt false
+	isPinned: ->
+		return 'pinned' if this.pinned is true
 	avatarFromUsername: ->
 		if this.avatar? and this.avatar[0] is '@'
 			return this.avatar.replace(/^@/, '')

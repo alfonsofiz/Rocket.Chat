@@ -9,9 +9,12 @@ favoritesEnabled = ->
 
 Template.room.helpers
 	favorite: ->
-		sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
-		return 'icon-star favorite-room' if sub?.f? and sub.f and favoritesEnabled
+		if Session.get("clase-highlighted-only") is "true"
+			return 'icon-star favorite-room'
 		return 'icon-star-empty'
+		#sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
+		#return 'icon-star favorite-room' if sub?.f? and sub.f and favoritesEnabled
+		#return 'icon-star-empty'
 
 	favoriteLabel: ->
 		sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
@@ -22,7 +25,11 @@ Template.room.helpers
 		return isSubscribed(this._id)
 
 	messagesHistory: ->
-		return ChatMessage.find { rid: this._id, t: { '$ne': 't' }  }, { sort: { ts: 1 } }
+		hl = Session.get("clase-highlighted-only")
+		if hl is "true"
+			return ChatMessage.find { rid: this._id, t: { '$nin': ['t', 'message_pinned'] }, pinned: true  }, { sort: { ts: 1 } }
+		else
+			return ChatMessage.find { rid: this._id, t: { '$nin': ['t', 'message_pinned'] }  }, { sort: { ts: 1 } }
 
 	hasMore: ->
 		return RoomHistoryManager.hasMore this._id
@@ -40,6 +47,10 @@ Template.room.helpers
 		return Session.get 'uploading'
 
 	roomName: ->
+		sub = ChatSubscription.findOne { rid: this._id }, { fields: { clase: 1 } }
+		if sub.clase?.childName?
+			return sub.clase.childName
+
 		roomData = Session.get('roomData' + this._id)
 		return '' unless roomData
 
@@ -263,9 +274,14 @@ Template.room.events
 	'click .toggle-favorite': (event) ->
 		event.stopPropagation()
 		event.preventDefault()
-		Meteor.call 'toggleFavorite', @_id, !$('i', event.currentTarget).hasClass('favorite-room'), (err) ->
-			if err
-				return handleError(err)
+		current = Session.get("clase-highlighted-only")
+		if current is 'true'
+			Session.set("clase-highlighted-only", 'false')
+		else
+			Session.set("clase-highlighted-only", 'true')
+		#Meteor.call 'toggleFavorite', @_id, !$('i', event.currentTarget).hasClass('favorite-room'), (err) ->
+		#	if err
+		#		return handleError(err)
 
 	'click .edit-room-title': (event) ->
 		event.preventDefault()

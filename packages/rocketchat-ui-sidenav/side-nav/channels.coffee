@@ -14,7 +14,7 @@ Template.channels.helpers
 			query.alert =
 				$ne: true
 
-		return ChatSubscription.find query, { sort: 't': 1, 'name': 1 }
+		return ChatSubscription.find query, { sort: 't': 1, 'name': 1, clase: 1 }
 
 Template.channels.events
 	'click .add-room': (e, instance) ->
@@ -26,4 +26,8 @@ Template.channels.events
 
 	'click .more-channels': ->
 		SideNav.setFlex "listChannelsFlex"
+		SideNav.openFlex()
+
+	'click .clase-add-child': ->
+		SideNav.setFlex "joinSchoolClassRoom"
 		SideNav.openFlex()

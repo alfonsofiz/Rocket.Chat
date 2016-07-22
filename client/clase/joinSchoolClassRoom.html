@@ -1,0 +1,76 @@
+<template name="joinSchoolClassRoom">
+	<header>
+		<div>
+			<h4>Añadir Hijo</h4>
+		</div>
+	</header>
+	<div class="content">
+		<div class="wrapper">
+			<h4>{{_ "Create_new" }}</h4>
+			<div class="input-line">
+				<label for="clase-child-name">Nombre hij@</label>
+				<input type="text" id="clase-child-name" class="required" dir="auto" placeholder="{{_ 'Enter_name_here'}}">
+			</div>
+			<div class="input-line">
+				<label for="clase-school">Selecione colegio</label>
+				<select id="clase-school" name="clase-school">
+					{{#each schools}}
+						<option value="{{_id}}">{{name}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="input-line">
+				<label for="clase-level">Selecione Nivel</label>
+				<select id ="clase-level" name="clase-level">
+					<option value="1">1 primaria</option>
+					<option value="2">2 primaria</option>
+					<option value="3">3 primaria</option>
+					<option value="4">4 primaria</option>
+					<option value="4">5 primaria</option>
+					<option value="4">6 primaria</option>
+				</select>
+			</div>
+			<div class="input-line">
+				<label for="clase-line">Selecione Linea</label>
+				<select id="clase-line" name="clase-line">
+					<option value="A">A</option>
+					<option value="B">B</option>
+					<option value="C">C</option>
+					<option value="D">D</option>
+					<option value="D">E</option>
+					<option value="D">F</option>
+				</select>
+			</div>
+			{{#if error.fields}}
+				<div class="input-error">
+					<strong>{{_ "Oops!"}}</strong>
+					{{#each error.fields}}
+						<p>{{_ "The_field_is_required" .}}</p>
+					{{/each}}
+				</div>
+			{{/if}}
+			{{#if error.invalid}}
+				<div class="input-error">
+					<strong>{{_ "Oops!"}}</strong>
+					{{{_ "Invalid_room_name" roomName}}}
+				</div>
+			{{/if}}
+			{{#if error.duplicate}}
+				<div class="input-error">
+					<strong>{{_ "Oops!"}}</strong>
+					{{{_ "Duplicate_channel_name" roomName}}}
+				</div>
+			{{/if}}
+			{{#if error.archivedduplicate}}
+				<div class="input-error">
+					<strong>{{_ "Oops!"}}</strong>
+					{{{_ "Duplicate_archived_channel_name" roomName}}}
+				</div>
+			{{/if}}
+			<div class="input-submit">
+				<button class="button clean primary clase-subscribe-class">Unirse a clase</button>
+				<button class="button clean cancel-channel">{{_ "Cancel" }}</button>
+			</div>
+		</div>
+	</div>
+</template>
