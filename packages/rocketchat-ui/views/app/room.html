@@ -10,7 +10,7 @@
 				{{> burger}}
 				<h2>
 					{{#if showToggleFavorite}}
-						<a href="#favorite" class="toggle-favorite"><i class="{{favorite}}" aria-label="{{_ favoriteLabel}}"></i></a>
+						<a href="#favorite" class="toggle-favorite" ><i class="{{favorite}}" aria-label="{{_ favoriteLabel}}" style="display:none;"></i></a>
 					{{/if}}
 					<i class="{{roomIcon}} status-{{userStatus}}"></i>
 					<span class="room-title">{{roomName}}</span>

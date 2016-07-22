@@ -2509,11 +2509,24 @@ a.github-fork {
 }
 
 .message {
-	padding: 8px 20px 4px 70px;
+	padding: 8px 8px 8px 15px;
 	position: relative;
 	line-height: 20px;
 	min-height: 40px;
+	margin: 8px 50px 8px 20px;
+	border-radius: 7px;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0,.15);
+	&.own {
+		background-color: #DCF8C6;
+		text-align: right;
+	}
+
+	//estilos destacados
 	&.highlight {
+		border-left: 3px solid #229bd6;
+		text-align: left;
+		margin-left: 20px;
+
 		-webkit-animation: highlight 3s;
 		-moz-animation: highlight 3s;
 		-o-animation: highlight 3s;
@@ -2524,6 +2537,11 @@ a.github-fork {
 	}
 	&:hover {
 		background-color: @message-hover-background-color;
+	}
+
+	.time {
+		display: block;
+		font-size: 11px;
 	}
 	&.new-day {
 		margin-top: 60px;
@@ -2559,8 +2577,11 @@ a.github-fork {
 		display: block;
 	}
 	.message-cog-container {
-		position: relative;
-		display: inline-block;
+		//position: relative;
+		//display: inline-block;
+		position: absolute;
+		display: block;
+		margin-left: -10px;
 		.message-cog {
 			visibility: hidden;
 			cursor: pointer;
@@ -2622,7 +2643,8 @@ a.github-fork {
 	.user {
 		display: inline-block;
 		font-weight: 600;
-		margin-right: 5px;
+		//margin-right: 5px;
+		margin-left: 5px;
 		&:hover {}
 	}
 	.thumb {
