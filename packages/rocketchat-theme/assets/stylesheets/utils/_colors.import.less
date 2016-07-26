@@ -213,13 +213,16 @@ label.required:after {
 
 // new layout buttons
 .button {
-	color: rgba(255, 255, 255, 0.85);
-	background-color: @action-buttons-color;
+	//color: rgba(255, 255, 255, 0.85);
+	//background-color: @action-buttons-color;
+	color: #229bd6;
+	background-color: #ffffff;
 	&:before {
 		background-color: rgba(0, 0, 0, 0.1);
 	}
 	&:hover {
-		color: #FFF;
+		//color: #FFF;
+		color: #02acec;
 	}
 	&.secondary {
 		background-color: @tertiary-background-color;
@@ -270,7 +273,8 @@ label.required:after {
 
 .burger {
 	i {
-		background-color: #333;
+		//background-color: #333;
+		background-color: #ffffff;
 	}
 	.unread-burger-alert {
 		background-color: #F95555;
@@ -281,7 +285,8 @@ label.required:after {
 .arrow {
 	&:before,
 	&:after {
-		background-color: mix(@quaternary-font-color, @primary-background-color, 65%);
+		//background-color: mix(@quaternary-font-color, @primary-background-color, 65%);
+		background-color: #ffffff;
 	}
 }
 
@@ -327,8 +332,11 @@ a.github-fork {
 }
 
 .account-box {
+
 	.info {
-		background-color: @primary-background-color;
+		//background-color: @primary-background-color;
+		background-color: #229bd6;
+
 		h4 {
 			color: mix(@quaternary-font-color, @primary-background-color, 65%);
 		}
@@ -420,22 +428,27 @@ a.github-fork {
 	color: @tertiary-font-color;
 	.custom-scroll(transparent, @custom-scrollbar-color);
 	header {
-		background-color: @primary-background-color;
+		//background-color: @primary-background-color;
+		background-color: #229bd6;
 	}
 	footer {
-		background-color: @primary-background-color;
+		//background-color: @primary-background-color;
+		background-color: #229bd6;
 	}
 	.content {
 		.custom-scroll(transparent, @custom-scrollbar-color);
-		background-color: @primary-background-color;
+		//background-color: @primary-background-color;
+		background-color: #229bd6;
 	}
 	.input-line {
 		input[type='text'],
 		input[type='password'],
 		select {
 			border-color: @tertiary-font-color;
-			background-color: @primary-background-color;
-			color: @input-font-color;
+			//background-color: @primary-background-color;
+			background-color: transparent;
+			//color: @input-font-color;
+			color:#ffffff;
 		}
 		& label {
 			color: @input-font-color;
@@ -450,10 +463,12 @@ a.github-fork {
 
 .side-nav {
 	&:before {
-		background-color: #dfdfdf;
+		//background-color: #dfdfdf;
+			background-color: #229bd6;
 	}
 	.rooms-list {
-		background-color: lighten(@primary-background-color, 2%);
+		//background-color: lighten(@primary-background-color, 2%);
+			background-color: #229bd6;
 		.custom-scroll(transparent, @custom-scrollbar-color);
 	}
 	.more {
@@ -470,7 +485,14 @@ a.github-fork {
 	}
 	.header {
 		color: #fff;
-		background-color: @primary-background-color;
+		//background-color: @primary-background-color;
+			background-color: #229bd6;
+	}
+	.clase-title {
+		color: #ffed00;
+	}
+	.clase-list {
+		color: #ffffff;
 	}
 	> .arrow {
 		&.hover,
@@ -483,7 +505,8 @@ a.github-fork {
 	}
 	.footer {
 		background: #fff;
-		background-color: @primary-background-color;
+		//background-color: @primary-background-color;
+			background-color: #229bd6;
 		small {
 			color: @tertiary-font-color;
 		}
@@ -515,7 +538,8 @@ a.github-fork {
 			&.active {
 				a {
 					background-color: @active-channel-background-color;
-					color: @active-channel-font-color;
+					//color: @active-channel-font-color;
+					color: #ffffff;
 				}
 				.opt {
 					background-color: transparent;
@@ -533,7 +557,8 @@ a.github-fork {
 			}
 		}
 		a {
-			color: @tertiary-font-color;
+			//color: @tertiary-font-color;
+			color: #ffffff;
 			&:hover {
 				background-color: rgba(255, 255, 255, 0.05);
 			}
@@ -563,8 +588,10 @@ a.github-fork {
 }
 
 .fixed-title {
-	background: #fff;
+	//background: #fff;
+	background-color: #229bd6;
 	border-bottom-color: @tertiary-background-color;
+	color: #ffffff;
 }
 
 .cms-page {
@@ -775,6 +802,7 @@ a.github-fork {
 }
 
 .messages-box {
+	background-color: #FAFAFA;
 	.load-more {
 		span {
 			border-color: #CCC;
@@ -796,6 +824,7 @@ a.github-fork {
 }
 
 .message {
+	background-color: #ffffff;
 	&.new-day {
 		&:before {
 			color: @secondary-font-color;
@@ -1108,11 +1137,24 @@ a.github-fork {
 		}
 	}
 }
+.register {
+	color:#ffffff;
+}
+.forgot-password {
+
+	color:#ffffff;
+}
+
+.back-to-login {
+
+	color:#ffffff;
+}
 
 #login-card {
-	background-color: #FAFAFA;
+	//background-color: #FAFAFA;
+	background-color: #229bd6;
 	h2 {
-		color: @primary-font-color;
+		color: #ffffff;
 		&.error {
 			color: #b40202;
 		}
@@ -1163,8 +1205,9 @@ a.github-fork {
 }
 
 .full-page {
-	background-color: darken(@primary-background-color, 10%);
-	.background-image(linear-gradient(darken(@primary-background-color, 10%), @primary-background-color));
+	//background-color: darken(@primary-background-color, 10%);
+	background-color: #229bd6;
+	//.background-image(linear-gradient(darken(@primary-background-color, 10%), @primary-background-color));
 	.text {
 		color: #FFF;
 		.button {

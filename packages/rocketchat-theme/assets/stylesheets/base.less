@@ -654,10 +654,10 @@ label.required:after {
 	&:extend(.unselectable);
 	display: inline-block;
 	padding: 9px 12px;
-	font-weight: 500;
+	font-weight: 700;
 	font-size: 13px;
 	text-align: center;
-	margin: 4px;
+	margin: 20px;
 	text-transform: uppercase;
 	word-spacing: 0;
 	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.125);
@@ -1234,7 +1234,7 @@ a.github-fork {
 			margin-bottom: 0;
 		}
 		label {
-			text-transform: uppercase;
+			//text-transform: uppercase;
 			font-weight: 400;
 			margin-bottom: 0;
 		}
@@ -1721,7 +1721,7 @@ a.github-fork {
 	top: 0;
 	bottom: 0;
 	left: @rooms-box-width;
-	right: 40px;
+	right: 0px;
 	width: auto;
 	height: auto;
 	&.flex-opened {
@@ -2419,6 +2419,15 @@ a.github-fork {
 	.start {
 		text-align: center;
 		margin-top: 12px;
+		margin-bottom: 50px;
+		h3{
+			margin: 30px auto;
+			font-size: 20px;
+			font-weight: 200;
+		}
+		p{
+			margin-bottom: 7px;
+		}
 	}
 	.new-message {
 		.unselectable;
@@ -2498,10 +2507,19 @@ a.github-fork {
 }
 
 .message {
-	padding: 8px 20px 4px 70px;
+	padding: 8px 8px 8px 15px;
 	position: relative;
 	line-height: 20px;
 	min-height: 40px;
+	margin: 8px 50px 8px 20px;
+	border-radius: 7px;
+	box-shadow: 0px 1px 2px rgba(0,0,0,.15);
+
+	&.own {
+		background-color: #DCF8C6;
+		text-align: right;
+	}
+
 	&.highlight {
 		-webkit-animation: highlight 3s;
 		-moz-animation: highlight 3s;
@@ -2513,6 +2531,10 @@ a.github-fork {
 	}
 	&:hover {
 		background-color: @message-hover-background-color;
+	}
+	.time {
+		display: block;
+		font-size: 11px;
 	}
 	&.new-day {
 		margin-top: 60px;
@@ -2548,8 +2570,11 @@ a.github-fork {
 		display: block;
 	}
 	.message-cog-container {
-		position: relative;
-		display: inline-block;
+		//position: relative;
+		//display: inline-block;
+		position: absolute;;
+		display: block;
+		margin-left: -10px;
 		.message-cog {
 			visibility: hidden;
 			cursor: pointer;
@@ -3720,11 +3745,11 @@ body:not(.is-cordova) {
 
 #login-card {
 	width: 100%;
-	max-width: 520px;
+	max-width: 350px;
 	padding: 20px;
 	margin: 20px auto;
-	box-shadow: 0 0 6px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 2px;
+	//box-shadow: 0 0 6px 10px rgba(0, 0, 0, 0.1);
+	//border-radius: 2px;
 	position: relative;
 	z-index: 1;
 	header {
@@ -3796,9 +3821,9 @@ body:not(.is-cordova) {
 			border-width: 0;
 			position: relative;
 			padding: 4px 8px;
-			font-size: 18px;
+			font-size: 14px;
 			border-bottom: 1px solid;
-			font-weight: 400;
+			font-weight: 200;
 			border-radius: 0px;
 			&.error {
 				border-bottom: 1px solid;
@@ -3851,7 +3876,23 @@ body:not(.is-cordova) {
 	width: 100%;
 	min-height: 100%;
 	z-index: 101;
+
+	.clase-logo {
+font-size: 45px;
+color:#ffed00;
+margin-bottom: 25px;
+margin-top: 1px;
+font-weight: 300;
+}
+
+.clase-desc {
+font-size: 16px;
+color:#ffffff;
+margin-bottom: 80px;
+font-weight: 200;
+}
 	.wrapper {
+		background-color: #229bd6;
 		text-align: center;
 		z-index: 10;
 		position: relative;
@@ -3859,6 +3900,7 @@ body:not(.is-cordova) {
 		padding: 20px;
 	}
 	.logo {
+		background-color: #229bd6;
 		display: block;
 		> img {
 			display: inline-block;
@@ -3870,6 +3912,11 @@ body:not(.is-cordova) {
 			padding: 10px;
 			max-width: 100%;
 		}
+	}
+	.register {
+		margin-bottom: 10px;
+		margin-top: 30px;
+		font-size: 16px;
 	}
 	a {
 		font-weight: 300;
@@ -3918,6 +3965,7 @@ body:not(.is-cordova) {
 		}
 	}
 	footer {
+		background-color: #229bd6;
 		padding: 20px 0 0;
 		position: relative;
 		z-index: 1;
@@ -4534,7 +4582,8 @@ body:not(.is-cordova) {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, .5);
+	//background-color: rgba(0, 0, 0, .5);
+	background-color: #229bd6;
 	z-index: 1000;
 	display: flex;
 	align-items: center;

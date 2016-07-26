@@ -42,6 +42,11 @@
 				<div class="submit">
 					<button data-loading-text="{{_ "Please_wait"}}..." class='button primary login'><span>{{btnLoginSave}}</span></button>
 				</div>
+				{{#if passwordresetAllowed}}
+				<div class="forgot-password {{showForgotPasswordLink}}">
+					<button type="button">{{_ 'Forgot_password'}}</button>
+				</div>
+				{{/if}}
 				{{#if registrationAllowed}}
 				<div class="register {{showRegisterLink}}">
 					<button type="button">{{_ 'Register'}}</button>
@@ -51,23 +56,19 @@
 						{{{linkReplacementText}}}
 					{{/if}}
 				{{/if}}
-				{{#if passwordresetAllowed}}
-				<div class="forgot-password {{showForgotPasswordLink}}">
-					<button type="button">{{_ 'Forgot_password'}}</button>
-				</div>
-				{{/if}}
+
 			{{/if}}
 		{{/if}}
 		<div class="back-to-login {{showBackToLoginLink}}">
 			<button type="button">{{_ 'Back_to_login'}}</button>
 		</div>
 	</form>
-	<div class='login-terms'>
+	<!--<div class='login-terms'>
 		{{{loginTerms}}}
 
 		<div class="powered-by">
 			Powered by <a href="https://rocket.chat">Open Source Chat Platform Rocket.Chat</a>.
 		</div>
-	</div>
+	</div> -->
 	{{/if}}
 </template>
