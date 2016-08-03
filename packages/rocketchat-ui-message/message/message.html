@@ -1,5 +1,6 @@
 <template name="message">
-	<li id="{{_id}}" class="message {{isSequential}} {{isPinned}} {{system}} {{t}} {{own}} {{isTemp}} {{chatops}} {{customClass}}" data-username="{{u.username}}" data-groupable="{{isGroupable}}" data-date="{{date}}" data-timestamp="{{timestamp}}">
+	<li>
+	<div id="{{_id}}" class="message {{isSequential}} {{isPinned}} {{system}} {{t}} {{own}} {{isTemp}} {{chatops}} {{customClass}}" data-username="{{u.username}}" data-groupable="{{isGroupable}}" data-date="{{date}}" data-timestamp="{{timestamp}}">
 		<!--{{#if avatar}}
 			{{#if avatarFromUsername}}
 				<button class="thumb user-card-message" data-username="{{u.username}}" tabindex="1">{{> avatar username=avatarFromUsername}}</button>
@@ -100,5 +101,7 @@
 				<span class="icon-people-plus"></span>
 			</li>
 		</ul>
+	</div>
+		<div style="clear:both;"></div>
 	</li>
 </template>
