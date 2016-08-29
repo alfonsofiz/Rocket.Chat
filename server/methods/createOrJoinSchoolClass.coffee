@@ -46,6 +46,8 @@ createRoom = (name, user, childName) ->
 	}
 
 joinRoom = (room, rid, user, userId, childName) ->
+	now = new Date()
+
 	# Check if user is already in room
 	subscription = RocketChat.models.Subscriptions.findOneByRoomIdAndUserId rid, user
 	if subscription?
