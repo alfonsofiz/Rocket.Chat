@@ -652,12 +652,13 @@ label.required:after {
 // new layout buttons
 .button {
 	&:extend(.unselectable);
+	width: 100%;
 	display: inline-block;
 	padding: 9px 12px;
 	font-weight: 700;
 	font-size: 13px;
 	text-align: center;
-	margin: 20px;
+	margin: 20px 0px;
 	text-transform: uppercase;
 	word-spacing: 0;
 	box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.125);
@@ -2507,6 +2508,7 @@ a.github-fork {
 }
 
 .message {
+	display: inline-block;
 	padding: 8px 8px 8px 15px;
 	position: relative;
 	line-height: 20px;
@@ -2516,8 +2518,11 @@ a.github-fork {
 	box-shadow: 0px 1px 2px rgba(0,0,0,.15);
 
 	&.own {
+		float: right;
 		background-color: #DCF8C6;
 		text-align: right;
+		margin-left: 50px;
+		margin-right: 20px;
 	}
 
 	&.highlight {
@@ -2534,7 +2539,9 @@ a.github-fork {
 	}
 	.time {
 		display: block;
-		font-size: 11px;
+		color: grey;
+		font-size: 8px;
+		line-height: 10px;
 	}
 	&.new-day {
 		margin-top: 60px;
@@ -3787,6 +3794,7 @@ body:not(.is-cordova) {
 		font-size: 10px;
 	}
 	.submit {
+
 		margin: 12px 0;
 	}
 	.remember {
@@ -3881,14 +3889,14 @@ body:not(.is-cordova) {
 font-size: 45px;
 color:#ffed00;
 margin-bottom: 25px;
-margin-top: 1px;
+margin-top: 50px;
 font-weight: 300;
 }
 
 .clase-desc {
 font-size: 16px;
 color:#ffffff;
-margin-bottom: 80px;
+margin-bottom: 10px;
 font-weight: 200;
 }
 	.wrapper {

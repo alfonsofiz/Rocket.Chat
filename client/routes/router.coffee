@@ -17,16 +17,16 @@ FlowRouter.route '/',
 	action: ->
 		BlazeLayout.render 'main', {center: 'loading'}
 		if not Meteor.userId()
-			return FlowRouter.go 'home'
+			return FlowRouter.go 'OnBoarding1'
 
 		Tracker.autorun (c) ->
 			if FlowRouter.subsReady() is true
 				Meteor.defer ->
-					if Meteor.user().defaultRoom?
-						room = Meteor.user().defaultRoom.split('/')
-						FlowRouter.go room[0], {name: room[1]}
+					if Meteor.user().clase?.defaultRoom?
+						room = Meteor.user().clase.defaultRoom
+						FlowRouter.goToRoomById room
 					else
-						FlowRouter.go 'home'
+						FlowRouter.go 'claseHome'
 				c.stop()
 
 
@@ -34,7 +34,7 @@ FlowRouter.route '/login',
 	name: 'login'
 
 	action: ->
-		FlowRouter.go 'home'
+		FlowRouter.go 'claseHome'
 
 
 FlowRouter.route '/home',
