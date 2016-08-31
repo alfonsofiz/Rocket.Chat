@@ -10,9 +10,7 @@
 				{{> burger}}
 				<h2>
 					<span class="room-title">{{roomName}}</span>
-					{{#if showToggleFavorite}}
-						<a href="#favorite" class="toggle-favorite"><i class="{{favorite}}" aria-label="{{_ favoriteLabel}}"></i></a>
-					{{/if}}
+					{{> highlightedSelector }}
 				</h2>
 			</header>
 			<div class="container-bars">

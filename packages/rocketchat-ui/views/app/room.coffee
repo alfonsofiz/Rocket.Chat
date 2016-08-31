@@ -9,12 +9,9 @@ favoritesEnabled = ->
 
 Template.room.helpers
 	favorite: ->
-		if Session.get("clase-highlighted-only") is "true"
-			return 'icon-star favorite-room'
+		sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
+		return 'icon-star favorite-room' if sub?.f? and sub.f and favoritesEnabled
 		return 'icon-star-empty'
-		#sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
-		#return 'icon-star favorite-room' if sub?.f? and sub.f and favoritesEnabled
-		#return 'icon-star-empty'
 
 	favoriteLabel: ->
 		sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
@@ -25,8 +22,7 @@ Template.room.helpers
 		return isSubscribed(this._id)
 
 	messagesHistory: ->
-		hl = Session.get("clase-highlighted-only")
-		if hl is "true"
+		if Meteor.user().clase?.highlightedOnly
 			return ChatMessage.find { rid: this._id, t: { '$nin': ['t', 'message_pinned'] }, pinned: true  }, { sort: { ts: 1 } }
 		else
 			return ChatMessage.find { rid: this._id, t: { '$nin': ['t', 'message_pinned'] }  }, { sort: { ts: 1 } }

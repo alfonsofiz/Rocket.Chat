@@ -1,11 +1,19 @@
+/* global Push */
+
+Push.addListener('error', function(err) {
+	console.log('Push error');
+	console.log(err);
+});
 
 RocketChat.callbacks.add('afterSaveMessage', function(message, room) {
 	// skips this callback if the message was edited
-	if (message.editedAt) {
+	if (message.editedAt && !message.pinned) {
 		return message;
 	}
 
 	var user = RocketChat.models.Users.findOneById(message.u._id);
+
+	var highlightedOnly = message.pinned ? true : {$ne: true};
 
 	var receivers = [];
 	RocketChat.models.Users.find({
@@ -14,7 +22,8 @@ RocketChat.callbacks.add('afterSaveMessage', function(message, room) {
 		},
 		_id: {
 			$ne: user._id
-		}
+		},
+		'clase.highlightedOnly': highlightedOnly
 	}, {
 		fields: {
 			_id: 1,
