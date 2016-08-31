@@ -20,3 +20,4 @@ Meteor.publish 'userData', ->
 			requirePasswordChangeReason: 1
 			'services.password.bcrypt': 1
 			statusLivechat: 1 # @TODO create an API so a package could add fields here
+			clase: 1
