@@ -10,8 +10,8 @@ favoritesEnabled = ->
 Template.room.helpers
 	favorite: ->
 		if Session.get("clase-highlighted-only") is "true"
-			return 'icon-star favorite-room'
-		return 'icon-star-empty'
+			return 'icon-toggle-on favorite-room'
+		return 'icon-toggle-off'
 		#sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
 		#return 'icon-star favorite-room' if sub?.f? and sub.f and favoritesEnabled
 		#return 'icon-star-empty'
