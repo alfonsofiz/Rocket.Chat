@@ -59,6 +59,8 @@ var notifyMessage = function(message, room) {
 			}
 		});
 	}
+
+	return message;
 };
 
 RocketChat.callbacks.add('afterSaveMessage', notifyMessage, RocketChat.callbacks.priority.LOW);
