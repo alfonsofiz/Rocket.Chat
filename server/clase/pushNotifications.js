@@ -5,7 +5,7 @@ Push.addListener('error', function(err) {
 	console.log(err);
 });
 
-RocketChat.callbacks.add('afterSaveMessage', function(message, room) {
+var notifyMessage = function(message, room) {
 	// skips this callback if the message was edited
 	if (message.editedAt && !message.pinned) {
 		return message;
@@ -59,4 +59,7 @@ RocketChat.callbacks.add('afterSaveMessage', function(message, room) {
 			}
 		});
 	}
-}, RocketChat.callbacks.priority.LOW);
+};
+
+RocketChat.callbacks.add('afterSaveMessage', notifyMessage, RocketChat.callbacks.priority.LOW);
+RocketChat.callbacks.add('afterPinMessage', notifyMessage, RocketChat.callbacks.priority.LOW);
