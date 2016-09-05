@@ -1,8 +1,8 @@
 Template.highlightedSelector.helpers
 	highlightedOnly: ->
 		if Meteor.user().clase?.highlightedOnly
-			return 'icon-star favorite-room'
-		return 'icon-star-empty'
+			return 'icon-toggle-on favorite-room'
+		return 'icon-toggle-off'
 
 Template.highlightedSelector.events
 	'click .toggle-highlighted-only': (event) ->
