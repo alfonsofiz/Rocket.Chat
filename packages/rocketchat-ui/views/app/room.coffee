@@ -10,8 +10,8 @@ favoritesEnabled = ->
 Template.room.helpers
 	favorite: ->
 		sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
-		return 'icon-toggle-on favorite-room' if sub?.f? and sub.f and favoritesEnabled
-		return 'icon-toggle-off'
+		return 'icon-star favorite-room' if sub?.f? and sub.f and favoritesEnabled
+		return 'icon-star-empty'
 
 	favoriteLabel: ->
 		sub = ChatSubscription.findOne { rid: this._id }, { fields: { f: 1 } }
