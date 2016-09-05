@@ -27,6 +27,8 @@ Meteor.methods
 
 		RocketChat.models.Messages.setPinnedByIdAndUserId message._id, message.pinnedBy, message.pinned
 
+		message = RocketChat.callbacks.run 'afterPinMessage', message, room
+
 		RocketChat.models.Messages.createWithTypeRoomIdMessageAndUser 'message_pinned', message.rid, '', me,
 			attachments: [
 				"text" : message.msg

@@ -1,9 +1,9 @@
 Template.joinSchoolClassRoom.helpers
-  schools: ->
-    return Clase.Schools.find()
+	schools: ->
+		return Clase.Schools.find()
 
-  error: ->
-    return Template.instance().error.get()
+	error: ->
+		return Template.instance().error.get()
 
 Template.joinSchoolClassRoom.events
 	'autocompleteselect #channel-members': (event, instance, doc) ->
