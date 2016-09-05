@@ -14,6 +14,9 @@ RocketChat.MessageAction = new class
 		unless config?.id
 			return false
 
+		unless _.contains(['pin-message','unpin-message','reaction-message','copy','Report Abuse'], config.id)
+			return false
+
 		Tracker.nonreactive ->
 			btns = buttons.get()
 			btns[config.id] = config
