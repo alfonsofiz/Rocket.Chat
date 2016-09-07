@@ -9,3 +9,15 @@ Template.highlightedSelector.events
 		event.stopPropagation()
 		event.preventDefault()
 		Meteor.call 'claseHighlightedOnlyToggle'
+
+	'click #clase_all_button': (event) ->
+		event.stopPropagation()
+		event.preventDefault()
+		if Meteor.user().clase?.highlightedOnly
+			Meteor.call 'claseHighlightedOnlyToggle'
+
+	'click #clase_highlighted_only_button': (event) ->
+		event.stopPropagation()
+		event.preventDefault()
+		if not Meteor.user().clase?.highlightedOnly
+			Meteor.call 'claseHighlightedOnlyToggle'
