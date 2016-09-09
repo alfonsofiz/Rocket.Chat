@@ -97,5 +97,3 @@ Template.joinSchoolClassRoom.onCreated ->
 		instance.error.set([])
 		instance.roomName.set('')
 		instance.selectedUsers.set([])
-		instance.find('#channel-name').value = ''
-		instance.find('#channel-members').value = ''
