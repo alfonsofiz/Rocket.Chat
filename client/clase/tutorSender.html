@@ -1,14 +1,18 @@
 <template name="tutorSender">
 	<section class="full-page">
 		<div class="wrapper">
-			<div class="input-line">
-
-				<label for="clase-school">Selecione colegio</label>
-				<select id="clase-school" name="clase-school">
-					{{#each schools}}
-						<option value="{{_id}}">{{name}}</option>
-					{{/each}}
-				</select>
+			<div >
+				{{ > loginHeader }}
+			</div>
+			<div id="login-card">
+				<div class="input-line">
+					<label for="clase-school">Selecione colegio</label>
+					<select id="clase-school" name="clase-school">
+						{{#each schools}}
+							<option value="{{_id}}">{{name}}</option>
+							{{/each}}
+						</select>
+				</div>
 
 				<div class="input-line">
 					<label for="clase-level">Selecione Nivel</label>
@@ -35,7 +39,7 @@
 				</div>
 
 				<div class="input-line">
-					<label for="clase-line">Secreto</label>
+					<label for="clase-line">Clave</label>
 					<input id="clase-secret">
 				</div>
 
