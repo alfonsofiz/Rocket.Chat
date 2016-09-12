@@ -14,4 +14,11 @@ Meteor.methods
 
 		tutor = RocketChat.models.Users.findOneById('tutor')
 
-		RocketChat.models.Messages.createWithTypeRoomIdMessageAndUser 'tutor_message', room._id, message, tutor, {}
+		message = RocketChat.models.Messages.createWithTypeRoomIdMessageAndUser 'tutor-message', room._id, message, tutor, {}
+
+		RocketChat.callbacks.run 'afterSaveMessage', message, room
+
+		message.pinned = true
+		RocketChat.models.Messages.setPinnedByIdAndUserId message._id, Date.now, true
+
+		RocketChat.callbacks.run 'afterPinMessage', message, room
