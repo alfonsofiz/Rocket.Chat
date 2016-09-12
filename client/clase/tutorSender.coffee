@@ -2,7 +2,7 @@ Template.tutorSender.onCreated ->
 	Meteor.subscribe 'claseSchools'
 	instance = this
 	instance.error = new ReactiveVar []
-	intance.success = new ReactiveVar false
+	instance.success = new ReactiveVar false
 	instance.clearForm = ->
 		instance.error.set([])
 		instance.success.set(false)
