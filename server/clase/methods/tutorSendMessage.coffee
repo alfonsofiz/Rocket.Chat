@@ -18,6 +18,7 @@ Meteor.methods
 
 		RocketChat.callbacks.run 'afterSaveMessage', message, room
 
+		message.pinned = true
 		RocketChat.models.Messages.setPinnedByIdAndUserId message._id, Date.now, true
 
 		RocketChat.callbacks.run 'afterPinMessage', message, room
