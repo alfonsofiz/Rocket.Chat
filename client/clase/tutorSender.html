@@ -1,0 +1,66 @@
+<template name="tutorSender">
+	<section class="full-page">
+		<div class="wrapper">
+			<div class="input-line">
+
+				<label for="clase-school">Selecione colegio</label>
+				<select id="clase-school" name="clase-school">
+					{{#each schools}}
+						<option value="{{_id}}">{{name}}</option>
+					{{/each}}
+				</select>
+
+				<div class="input-line">
+					<label for="clase-level">Selecione Nivel</label>
+					<select id ="clase-level" name="clase-level">
+						<option value="1">1 primaria</option>
+						<option value="2">2 primaria</option>
+						<option value="3">3 primaria</option>
+						<option value="4">4 primaria</option>
+						<option value="5">5 primaria</option>
+						<option value="6">6 primaria</option>
+					</select>
+				</div>
+
+				<div class="input-line">
+					<label for="clase-line">Selecione Linea</label>
+					<select id="clase-line" name="clase-line">
+						<option value="A">A</option>
+						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="E">E</option>
+						<option value="F">F</option>
+					</select>
+				</div>
+
+				<div class="input-line">
+					<label for="clase-line">Secreto</label>
+					<input id="clase-secret">
+				</div>
+
+				<div class="input-line">
+					<label for="clase-line">Mensaje</label>
+					<textarea id="clase-message"></textarea>
+				</div>
+
+				{{#if error.wrongSecret}}
+					<div class="input-error">
+						<strong>{{_ "Oops!"}}</strong>
+						El secreto no es correcto
+					</div>
+				{{/if}}
+				{{#if success}}
+					<div class="input-error">
+						<strong>Enviado!!</strong>
+					</div>
+				{{/if}}
+
+				<div class="input-submit">
+					<button class="button clean primary clase-tutor-sender">Enviar</button>
+					<button class="button clean cancel-channel">{{_ "Cancel" }}</button>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

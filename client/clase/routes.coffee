@@ -24,3 +24,8 @@ FlowRouter.route '/claseHome',
 		RocketChat.TabBar.showGroup 'home'
 		BlazeLayout.render 'main', {center: 'claseHome'}
 		KonchatNotification.getDesktopPermission()
+
+FlowRouter.route '/asdgasdashfdsah/tutor/sender',
+	name: 'tutorSender'
+	action: ->
+		BlazeLayout.render 'tutorSender'
