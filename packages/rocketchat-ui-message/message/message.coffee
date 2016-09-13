@@ -9,7 +9,8 @@ Template.message.helpers
 	isGroupable: ->
 		return 'false' if this.groupable is false
 	isSequential: ->
-		return 'sequential' if this.groupable isnt false
+		return false
+		#return 'sequential' if this.groupable isnt false
 	isPinned: ->
 		return 'pinned' if this.pinned is true
 	avatarFromUsername: ->
