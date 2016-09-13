@@ -4,6 +4,6 @@ Template.OnBoarding3.onRendered(function() {
 
 Template.OnBoarding3.events({
 	'click #clase_next': function() {
-		FlowRouter.go("OnBoarding4")
+		FlowRouter.go('OnBoarding4')
 	}
-})
+});
