@@ -18,6 +18,11 @@ FlowRouter.route '/OnBoarding4',
 	action: ->
 		BlazeLayout.render 'OnBoarding4'
 
+FlowRouter.route '/OnBoarding5',
+	name: 'OnBoarding5'
+	action: ->
+		BlazeLayout.render 'OnBoarding5'
+
 FlowRouter.route '/claseHome',
 	name: 'claseHome'
 	action: ->
