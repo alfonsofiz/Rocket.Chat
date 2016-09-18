@@ -14,3 +14,39 @@ RocketChat.callbacks.add('afterSaveMessage', (message) => {
 		window.ga('send', 'event', 'Message', 'Sent', label);
 	}
 }, 2000);
+
+function sendButtonClickedEvent(button) {
+	if (window.ga) {
+		window.ga('send', 'event', button, 'Clicked', 'clicked on' + button + ' button');
+	}
+}
+
+function sendChangeStateHighlightedOnly(state) {
+	if (window.ga) {
+		if (state) {
+			window.ga('send', 'event', 'highlightedOnlyMode', 'Changed to Only', 'Highlighted Only Mode changed to Only');
+		} else {
+			window.ga('send', 'event', 'highlightedOnlyMode', 'Changed to All', 'Highlighted Only Mode changed to All');
+		}
+	}
+}
+
+RocketChat.callbacks.add('ClaseToggleHighlightedOnlyClicked', function(prevState) {
+	sendButtonClickedEvent('ClaseToggleHighlightedOnly');
+	sendChangeStateHighlightedOnly(prevState ? false : true);
+});
+
+RocketChat.callbacks.add('ClaseAllMessagesClicked', function(prevState) {
+	sendButtonClickedEvent('ClaseAllMessages');
+	if (prevState) {
+		sendChangeStateHighlightedOnly(false);
+	}
+
+});
+
+RocketChat.callbacks.add('ClaseHighlightedOnlyClicked', function(prevState) {
+	sendButtonClickedEvent('ClaseHighlightedOnly');
+	if (!prevState) {
+		sendChangeStateHighlightedOnly(true);
+	}
+});
