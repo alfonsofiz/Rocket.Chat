@@ -23,6 +23,11 @@ FlowRouter.route '/OnBoarding5',
 	action: ->
 		BlazeLayout.render 'OnBoarding5'
 
+FlowRouter.route '/OnBoardingPiloto',
+	name: 'OnBoardingPiloto'
+	action: ->
+		BlazeLayout.render 'OnBoardingPiloto'
+
 FlowRouter.route '/claseHome',
 	name: 'claseHome'
 	action: ->
