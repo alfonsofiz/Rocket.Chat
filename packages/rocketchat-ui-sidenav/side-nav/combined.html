@@ -19,8 +19,6 @@
 		{{/each}}
 	</ul>
 	<button class="more clase-add-child">Añadir hij@</button>
-	<hr />
-	<a href="tel:+34911876666">¿Algún problema con el app, llamanos?</a>
 	<!-- <button class="more more-channels">{{_ "More_channels"}}...</button> -->
 	<div>
 	<h3 class="clase-title">
@@ -35,13 +33,17 @@
 			</li>
 			<li>
 				{{#if showAdminOption }}
-					<a id="admin" class='account-link'><span>{{_ "Administration"}}</span></a>
+					<a id="admin" class='account-link'><span class="name">{{_ "Administration"}}</span></a>
 				{{/if}}
 			</li>
 			<li>
-				<a id="logout"><span>{{_ "Logout"}}</span></a>
+				<a id="logout"><span class="name">{{_ "Logout"}}</span></a>
 			</li>
 
 	</ul>
+</div>
+<div class="clase-feedback">
+<hr />
+	<a class="clase-feedback" href="tel:+34911876666">¿Algún problema con el app? Llamanos!</a>
 </div>
 </template>
